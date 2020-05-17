@@ -16,6 +16,7 @@ public class HelloWebAppTest extends Mockito{
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
         when(response.getWriter()).thenReturn(writer);
+        
         new HelloWebApp().doGet(request, response);
         
         writer.flush(); // it may not have been flushed yet...
