@@ -18,7 +18,6 @@ public class HelloWebAppTest extends Mockito{
         when(response.getWriter()).thenReturn(writer);
         
         new HelloWebApp().doGet(request, response);
-        
         writer.flush(); // it may not have been flushed yet...
         System.out.print(stringWriter.toString());
         assertTrue("Expecting Hello from Edureka but not found",stringWriter.toString().contains("Hello from Edureka"));
